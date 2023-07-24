@@ -1,0 +1,90 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNMOlqmobl1VbThah1zW3tC",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/AugustM16a/Deliverable-1/blob/master/Deliverable%204\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "1C_ydBmm3mmx",
+        "outputId": "e45b5a9c-6469-43d6-8dfb-c61aadcb74e7",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter an integer number between 5 and 15: 8\n",
+            "The elements of the array are: 14 40 26 20 42 39 24 26\n",
+            "The sum is: 231\n"
+          ]
+        }
+      ],
+      "source": [
+        "import random\n",
+        "\n",
+        "def populate_list(length):\n",
+        "    return [random.randint(10, 50) for _ in range(length)]\n",
+        "\n",
+        "def sum_list(lst):\n",
+        "    return sum(lst)\n",
+        "\n",
+        "def main():\n",
+        "    while True:\n",
+        "        user_input = input(\"Enter an integer number between 5 and 15: \")\n",
+        "\n",
+        "        try:\n",
+        "            number = int(user_input)\n",
+        "            if 5 <= number <= 15:\n",
+        "                break\n",
+        "            else:\n",
+        "                print(\"Invalid input. Please enter a number between 5 and 15.\")\n",
+        "        except ValueError:\n",
+        "            print(\"Invalid input. Please enter a valid integer.\")\n",
+        "\n",
+        "    # Convert the number to an integer (since it was validated in the loop)\n",
+        "    number = int(user_input)\n",
+        "\n",
+        "    # Generate the list\n",
+        "    generated_list = populate_list(number)\n",
+        "\n",
+        "    # Display the list elements\n",
+        "    print(\"The elements of the array are:\", \" \".join(map(str, generated_list)))\n",
+        "\n",
+        "    # Calculate and display the sum of the elements in the list\n",
+        "    sum_result = sum_list(generated_list)\n",
+        "    print(\"The sum is:\", sum_result)\n",
+        "\n",
+        "if __name__ == \"__main__\":\n",
+        "    main()"
+      ]
+    }
+  ]
+}
